@@ -1,0 +1,32 @@
+﻿@model Potresi.Models.Nudim
+
+@{
+    ViewData["Title"] = "Zatraži";
+}
+
+<h1>Zatraži</h1>
+
+<h3>Želite li zatražiti sljedeće?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lokacija)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lokacija)
+        </dd>
+    </dl>
+    
+    <form asp-action="Zatrazi">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Zatraži" class="btn btn-danger" /> |
+        <a asp-action="Index">Povratak na popis</a>
+    </form>
+</div>

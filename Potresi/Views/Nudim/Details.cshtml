@@ -1,0 +1,36 @@
+﻿@model Potresi.Models.Nudim
+
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h1>Detalji</h1>
+
+<div>
+    <h4>Ponuda</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lokacija)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lokacija)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Aktivno)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aktivno)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Izmjeni</a> |
+    <a asp-action="Index">Povratak na popis</a>
+</div>

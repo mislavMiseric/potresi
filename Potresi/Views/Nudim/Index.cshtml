@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Potresi.Models.Nudim>
+
+@{
+    ViewData["Title"] = "Moje ponude";
+}
+
+<h1>Moje ponude</h1>
+
+<p>
+    <a asp-action="Create">Kreiraj novi</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lokacija)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aktivno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lokacija)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Aktivno)
+            </th>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Izmjeni</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalji</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Obriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
